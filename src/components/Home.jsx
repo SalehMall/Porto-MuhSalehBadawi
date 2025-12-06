@@ -199,8 +199,9 @@ const Home = () => {
               </span>
             </Link>
 
+            
             <a
-              href="/CV MUH SALEH BADAWI.pdf"
+              href="/CV-Muh-Saleh-Badawi.pdf"
               download
               className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full glass text-white font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105"
             >
