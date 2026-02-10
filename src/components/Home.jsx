@@ -217,7 +217,7 @@ const Home = () => {
           >
             {[
               { value: "3.65", label: "IPK" },
-              { value: "4+", label: "Certifications" },
+              { value: "6+", label: "Certifications" },
               { value: "2+", label: "Bootcamps" },
             ].map((stat, i) => (
               <div key={i} className="text-center">

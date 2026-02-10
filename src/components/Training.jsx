@@ -56,6 +56,32 @@ const Training = () => {
       color: "from-green-500 to-emerald-500",
       icon: "📱",
     },
+    {
+      id: 5,
+      title: "Essential Skills: Design Thinking",
+      provider: "GNIK & Kemnaker RI",
+      date: "Januari 2026",
+      credentialId: "Pembekalan 12+ Essential Skills Program Magang Nasional",
+      description:
+        "Program pembekalan magang nasional yang mempelajari pendekatan Design Thinking untuk pemecahan masalah secara kreatif dan inovatif.",
+      skills: ["Design Thinking", "Problem Solving", "Creative Thinking", "Innovation"],
+      link: "/Sertifikat/Essential-Skills-Design-Thinking.pdf",
+      color: "from-red-600 to-red-700", // Merah tegas (Bold Red)
+      icon: "💡",
+    },
+    {
+      id: 6,
+      title: "Essential Skills: Integrity at Work",
+      provider: "GNIK & Kemnaker RI",
+      date: "Februari 2026",
+      credentialId: "Pembekalan 12+ Essential Skills Program Magang Nasional",
+      description:
+        "Program pembekalan mengenai pentingnya integritas, kejujuran, dan etika profesional dalam lingkungan kerja.",
+      skills: ["Integrity", "Professional Ethics", "Workplace Culture", "Soft Skills"],
+      link: "/Sertifikat/Essential-Skills-Integrity-at-Work.pdf",
+      color: "from-red-500 to-red-600", // Merah sedikit lebih terang (Solid Red)
+      icon: "🤝",
+    },    
   ];
 
   return (

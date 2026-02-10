@@ -5,7 +5,7 @@ import { FaCode, FaPalette, FaDatabase, FaGraduationCap } from "react-icons/fa";
 const About = () => {
   const stats = [
     { icon: FaGraduationCap, value: "3.65", label: "IPK / 4.0", color: "from-accent to-cyan-400" },
-    { icon: FaCode, value: "4+", label: "Certifications", color: "from-purple to-violet-400" },
+    { icon: FaCode, value: "6+", label: "Certifications", color: "from-purple to-violet-400" },
     { icon: FaPalette, value: "2+", label: "Bootcamp Programs", color: "from-pink to-rose-400" },
     { icon: FaDatabase, value: "2025", label: "Graduate Year", color: "from-amber-500 to-yellow-400" },
   ];
