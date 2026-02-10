@@ -80,30 +80,43 @@ const Contact = () => {
       <div className="relative z-10 max-w-screen-xl mx-auto px-6">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: -24, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, staggerChildren: 0.08, delayChildren: 0.1 }}
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-2 rounded-full glass text-accent text-sm font-medium mb-4">
+          <motion.span
+            initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            className="inline-block px-4 py-2 rounded-full glass text-accent text-sm font-medium mb-4"
+          >
             Let's Connect
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          </motion.span>
+          <motion.h2
+            initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
+            whileInView={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
             <span className="text-white">Get In </span>
             <span className="gradient-text">Touch</span>
-          </h2>
-          <p className="text-secondary max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            className="text-secondary max-w-2xl mx-auto"
+          >
             Tertarik untuk bekerja sama? Jangan ragu untuk menghubungi saya.
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
           {/* Left - Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: -50, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-8">
@@ -117,9 +130,9 @@ const Contact = () => {
                   <motion.a
                     key={i}
                     href={item.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
+                    initial={{ opacity: 0, x: -20, filter: "blur(6px)" }}
+                    whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                    transition={{ delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                     viewport={{ once: true }}
                     whileHover={{ x: 5 }}
                     className="flex items-center gap-4 group"
@@ -154,6 +167,9 @@ const Contact = () => {
                       href={social.href}
                       target="_blank"
                       rel="noreferrer"
+                      initial={{ opacity: 0, filter: "blur(6px)" }}
+                      whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                      transition={{ delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
                       whileHover={{ scale: 1.1, y: -3 }}
                       whileTap={{ scale: 0.95 }}
                       className={`w-12 h-12 rounded-xl glass flex items-center justify-center text-secondary ${social.color} transition-all duration-300`}
@@ -183,9 +199,9 @@ const Contact = () => {
 
           {/* Right - Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: 50, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
           >
             <div className="relative">

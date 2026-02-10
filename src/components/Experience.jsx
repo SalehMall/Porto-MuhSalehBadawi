@@ -123,29 +123,42 @@ const Experience = () => {
       <div className="relative z-10 max-w-screen-xl mx-auto px-6">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: -24, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, staggerChildren: 0.08, delayChildren: 0.1 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 rounded-full glass text-accent text-sm font-medium mb-4">
+          <motion.span
+            initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            className="inline-block px-4 py-2 rounded-full glass text-accent text-sm font-medium mb-4"
+          >
             What I Do Best
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          </motion.span>
+          <motion.h2
+            initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
+            whileInView={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
             <span className="text-white">Technical </span>
             <span className="gradient-text">Skills</span>
-          </h2>
-          <p className="text-secondary max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            className="text-secondary max-w-2xl mx-auto"
+          >
             Keahlian dan Teknologi yang Saya Kuasai
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Category Filter */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
           className="flex flex-wrap justify-center gap-3 mb-16"
         >
@@ -182,10 +195,10 @@ const Experience = () => {
                 <motion.div
                   key={skill.name}
                   layout
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  initial={{ opacity: 0, scale: 0.9, filter: "blur(6px)" }}
+                  animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, scale: 0.9, filter: "blur(6px)" }}
+                  transition={{ duration: 0.3, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
                   whileHover={{ y: -5 }}
                   className="group relative"
                 >
@@ -215,9 +228,9 @@ const Experience = () => {
 
         {/* Summary Stats */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
         >

@@ -9,7 +9,7 @@ const WorkExperience = () => {
       title: "Pranata Komputer Magang",
       company: "Balai Prasarana Permukiman Wilayah (BPPW) Sulawesi Tenggara",
       location: "Kendari, Sulawesi Tenggara",
-      period: "2021 - 2025",
+      period: "1 Februari 2024 - 31 Agustus 2025",
       type: "Internship",
       description:
         "Magang di instansi pemerintah dengan fokus pengembangan sistem informasi dan dukungan IT.",

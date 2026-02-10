@@ -56,12 +56,26 @@ const Training = () => {
       color: "from-green-500 to-emerald-500",
       icon: "📱",
     },
+    
     {
       id: 5,
+      title: "SkillFest 2025: Transformasi Digital",
+      provider: "UNDP, Microsoft & Biji-Biji Initiative",
+      date: "Mei 2025",
+      credentialId: "059/SERT-TALKSHOW/DGS/V/2025",
+      description:
+        "Berpartisipasi dalam talkshow SkillFest 2025 mengenai peluang & tantangan transformasi digital serta strategi menyusun peta jalan karier bagi mahasiswa.",
+      skills: ["Digital Transformation", "Career Roadmap", "Digital Skills", "Future Readiness"],
+      link: "/Sertifikat/Skill-Our-Future-2025.pdf",
+      color: "from-blue-600 to-indigo-700", // Mengikuti aksen warna biru dan ungu pada sertifikat
+      icon: "🌐",
+    },   
+    {
+      id: 6,
       title: "Essential Skills: Design Thinking",
       provider: "GNIK & Kemnaker RI",
       date: "Januari 2026",
-      credentialId: "Pembekalan 12+ Essential Skills Program Magang Nasional",
+      credentialId: "Pembekalan Essential Skills Program Magang Nasional",
       description:
         "Program pembekalan magang nasional yang mempelajari pendekatan Design Thinking untuk pemecahan masalah secara kreatif dan inovatif.",
       skills: ["Design Thinking", "Problem Solving", "Creative Thinking", "Innovation"],
@@ -70,18 +84,18 @@ const Training = () => {
       icon: "💡",
     },
     {
-      id: 6,
+      id: 7,
       title: "Essential Skills: Integrity at Work",
       provider: "GNIK & Kemnaker RI",
       date: "Februari 2026",
-      credentialId: "Pembekalan 12+ Essential Skills Program Magang Nasional",
+      credentialId: "Pembekalan Essential Skills Program Magang Nasional",
       description:
         "Program pembekalan mengenai pentingnya integritas, kejujuran, dan etika profesional dalam lingkungan kerja.",
       skills: ["Integrity", "Professional Ethics", "Workplace Culture", "Soft Skills"],
       link: "/Sertifikat/Essential-Skills-Integrity-at-Work.pdf",
       color: "from-red-500 to-red-600", // Merah sedikit lebih terang (Solid Red)
       icon: "🤝",
-    },    
+    },
   ];
 
   return (
@@ -95,22 +109,35 @@ const Training = () => {
       <div className="relative z-10 max-w-screen-xl mx-auto px-6">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: -24, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, staggerChildren: 0.08, delayChildren: 0.1 }}
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-2 rounded-full glass text-purple text-sm font-medium mb-4">
+          <motion.span
+            initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            className="inline-block px-4 py-2 rounded-full glass text-purple text-sm font-medium mb-4"
+          >
             Continuous Learning
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          </motion.span>
+          <motion.h2
+            initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
+            whileInView={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
             <span className="text-white">Training & </span>
             <span className="gradient-text">Certifications</span>
-          </h2>
-          <p className="text-secondary max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            className="text-secondary max-w-2xl mx-auto"
+          >
             Pelatihan dan Sertifikasi Profesional
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Training Cards */}
@@ -118,9 +145,9 @@ const Training = () => {
           {trainings.map((training, index) => (
             <motion.div
               key={training.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 40, filter: "blur(6px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true }}
               className="group relative"
             >
@@ -173,9 +200,9 @@ const Training = () => {
                     {training.skills.map((skill, i) => (
                       <motion.span
                         key={i}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: i * 0.05 }}
+                        initial={{ opacity: 0, scale: 0.9, filter: "blur(6px)" }}
+                        whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                        transition={{ delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
                         viewport={{ once: true }}
                         className={`px-3 py-1 rounded-full text-xs bg-gradient-to-r ${training.color} bg-opacity-10 text-white border border-white/10`}
                       >
@@ -206,9 +233,9 @@ const Training = () => {
 
         {/* Achievement Banner */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
           className="mt-16 p-8 rounded-2xl glass max-w-3xl mx-auto text-center"
         >

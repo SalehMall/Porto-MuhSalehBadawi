@@ -49,11 +49,21 @@ const Home = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: -30, filter: "blur(8px)" },
     visible: {
       opacity: 1,
       y: 0,
+      filter: "blur(0px)",
       transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
+    },
+  };
+
+  const revealVariants = {
+    hidden: { clipPath: "inset(0 100% 0 0)", opacity: 0 },
+    visible: {
+      clipPath: "inset(0 0 0 0)",
+      opacity: 1,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
@@ -126,22 +136,19 @@ const Home = () => {
         >
           {/* Greeting Badge */}
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-accent font-medium">
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              Available for opportunities
-            </span>
+            
           </motion.div>
 
           {/* Name */}
           <motion.div variants={itemVariants}>
-            <h2 className="text-xl sm:text-2xl font-medium text-secondary mb-2">
+            <motion.h2 variants={revealVariants} className="text-xl sm:text-2xl font-medium text-secondary mb-2">
               Hi, I'm
-            </h2>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4">
+            </motion.h2>
+            <motion.h1 variants={revealVariants} className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4">
               <span className="gradient-text">Muh Saleh</span>
               <br />
               <span className="text-white">Badawi</span>
-            </h1>
+            </motion.h1>
           </motion.div>
 
           {/* Animated Role */}

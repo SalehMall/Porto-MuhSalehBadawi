@@ -35,29 +35,42 @@ const Education = () => {
       <div className="relative z-10 max-w-screen-xl mx-auto px-6">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: -24, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, staggerChildren: 0.08, delayChildren: 0.1 }}
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-2 rounded-full glass text-purple text-sm font-medium mb-4">
+          <motion.span
+            initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            className="inline-block px-4 py-2 rounded-full glass text-purple text-sm font-medium mb-4"
+          >
             Academic Background
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          </motion.span>
+          <motion.h2
+            initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
+            whileInView={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
             <span className="text-white">My </span>
             <span className="gradient-text">Education</span>
-          </h2>
-          <p className="text-secondary max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            className="text-secondary max-w-2xl mx-auto"
+          >
             Riwayat Pendidikan Formal
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Education Card */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 40, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
@@ -126,14 +139,14 @@ const Education = () => {
                 </div>
                 <ul className="space-y-3">
                   {educationData.achievements.map((achievement, i) => (
-                    <motion.li
-                      key={i}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.1 }}
-                      viewport={{ once: true }}
-                      className="flex items-start gap-3 text-secondary"
-                    >
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -20, filter: "blur(6px)" }}
+                    whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                    transition={{ delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    viewport={{ once: true }}
+                    className="flex items-start gap-3 text-secondary"
+                  >
                       <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-accent to-purple flex-shrink-0" />
                       <span>{achievement}</span>
                     </motion.li>
@@ -150,9 +163,9 @@ const Education = () => {
                   {educationData.relevantCourses.map((course, i) => (
                     <motion.span
                       key={i}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: i * 0.05 }}
+                      initial={{ opacity: 0, scale: 0.9, filter: "blur(6px)" }}
+                      whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                      transition={{ delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.05 }}
                       className="px-4 py-2 rounded-full glass text-sm text-accent border border-accent/20 hover:border-accent/50 transition-colors cursor-default"

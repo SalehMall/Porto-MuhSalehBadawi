@@ -47,30 +47,30 @@ const Work = () => {
       link: "https://github.com/SalehMall/rekomendasi-coffeeshop.git",
       repo: "https://github.com/SalehMall/rekomendasi-coffeeshop.git",
       image: "/project/Sistem Pencarian Coffee Shop.png",
-      category: "Full Stack",
+      category: "Web App",
       color: "from-amber-500 to-orange-600",
     },
     {
       id: 5,
       title: "Sistem Arsiparis",
-      desc: "Sistem platform digital yang digunakan untuk manajemen kearsipan.",
+      desc: "Sistem platform digital yang digunakan untuk manajemen kearsipan yang aman dan terorganisir.",
       tech: ["Laravel", "MySQL", "JavaScript", "tailwindcss"],
       link: "https://github.com/SalehMall",
       repo: "https://github.com/SalehMall",
       image: "/project/arsip.png",
-      category: "Full Stack",
-      color: "from-amber-500 to-orange-600",
+      category: "Web App",
+      color: "from-blue-600 to-indigo-700", // Warna Biru-Indigo (Profesional & Teratur)
     },
     {
       id: 6,
       title: "Sistem Monitoring Aktifitas Peserta Pelatihan",
-      desc:  "Sistem monitoring berbasis web yang menyajikan data kehadiran, tugas, dan perkembangan peserta pelatihan secara real-time guna memastikan efektivitas evaluasi",
+      desc:  "Sistem monitoring berbasis web yang menyajikan data kehadiran, tugas, dan perkembangan peserta pelatihan secara real-time guna memastikan efektivitas evaluasi.",
       tech: ["Laravel", "MySQL", "JavaScript", "tailwindcss"],
       link: "https://github.com/SalehMall",
       repo: "https://github.com/SalehMall",
       image: "/project/aktifitas-magang.png",
-      category: "Full Stack",
-      color: "from-amber-500 to-orange-600",
+      category: "Web App",
+      color: "from-emerald-500 to-teal-600", // Warna Emerald-Teal (Monitoring & Progress)
     },
   ];
 
@@ -85,22 +85,35 @@ const Work = () => {
       <div className="relative z-10 max-w-screen-xl mx-auto px-6">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: -24, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, staggerChildren: 0.08, delayChildren: 0.1 }}
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-2 rounded-full glass text-accent text-sm font-medium mb-4">
+          <motion.span
+            initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            className="inline-block px-4 py-2 rounded-full glass text-accent text-sm font-medium mb-4"
+          >
             Featured Work
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          </motion.span>
+          <motion.h2
+            initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
+            whileInView={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
             <span className="text-white">Selected </span>
             <span className="gradient-text">Projects</span>
-          </h2>
-          <p className="text-secondary max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            className="text-secondary max-w-2xl mx-auto"
+          >
             Beberapa proyek terpilih yang telah saya kerjakan
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Projects Grid */}
@@ -108,9 +121,9 @@ const Work = () => {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              initial={{ opacity: 0, y: 40, filter: "blur(6px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.6, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true }}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}

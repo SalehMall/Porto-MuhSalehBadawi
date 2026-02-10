@@ -29,29 +29,43 @@ const About = () => {
       <div className="relative z-10 max-w-screen-xl mx-auto px-6">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: -24, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, staggerChildren: 0.08, delayChildren: 0.1 }}
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-2 rounded-full glass text-accent text-sm font-medium mb-4">
+          <motion.span
+            initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            className="inline-block px-4 py-2 rounded-full glass text-accent text-sm font-medium mb-4"
+          >
             Get to know me
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          </motion.span>
+          <motion.h2
+            initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
+            whileInView={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
             <span className="text-white">About </span>
             <span className="gradient-text">Me</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-accent via-purple to-pink mx-auto rounded-full" />
+          </motion.h2>
+          <motion.div
+            initial={{ width: 0, opacity: 0 }}
+            whileInView={{ width: "5rem", opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="h-1 bg-gradient-to-r from-accent via-purple to-pink mx-auto rounded-full"
+          />
         </motion.div>
 
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Text Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: -50, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
           >
             <div className="space-y-6">
@@ -82,9 +96,9 @@ const About = () => {
                 {highlights.map((item, i) => (
                   <motion.li
                     key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
+                    initial={{ opacity: 0, x: -20, filter: "blur(6px)" }}
+                    whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                    transition={{ delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                     viewport={{ once: true }}
                     className="flex items-start gap-3 text-secondary"
                   >
@@ -98,9 +112,9 @@ const About = () => {
 
           {/* Right - Stats Grid */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: 50, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
             className="grid grid-cols-2 gap-6"
           >
@@ -109,9 +123,9 @@ const About = () => {
               return (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.1 + 0.2 }}
+                  initial={{ opacity: 0, scale: 0.9, filter: "blur(6px)" }}
+                  whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                  transition={{ delay: i * 0.1 + 0.2, ease: [0.16, 1, 0.3, 1] }}
                   viewport={{ once: true }}
                   whileHover={{ y: -5, scale: 1.02 }}
                   className="group relative p-8 rounded-2xl glass overflow-hidden"
