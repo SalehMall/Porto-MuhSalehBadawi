@@ -73,7 +73,7 @@ const Training = () => {
     {
       id: 6,
       title: "Essential Skills: Design Thinking",
-      provider: "GNIK & Kemnaker RI",
+      provider: "GNIK, Kemnaker RI & Maganghub",
       date: "Januari 2026",
       credentialId: "Pembekalan Essential Skills Program Magang Nasional",
       description:
@@ -86,7 +86,7 @@ const Training = () => {
     {
       id: 7,
       title: "Essential Skills: Integrity at Work",
-      provider: "GNIK & Kemnaker RI",
+      provider: "GNIK, Kemnaker RI & Maganghub",
       date: "Februari 2026",
       credentialId: "Pembekalan Essential Skills Program Magang Nasional",
       description:
@@ -95,6 +95,19 @@ const Training = () => {
       link: "/Sertifikat/Essential-Skills-Integrity-at-Work.pdf",
       color: "from-red-500 to-red-600", // Merah sedikit lebih terang (Solid Red)
       icon: "🤝",
+    },
+    {
+      id: 8, // Sesuaikan urutan ID jika perlu
+      title: "Essential Skills: Self Efficacy",
+      provider: "GNIK, Kemnaker RI & Maganghub",
+      date: "Februari 2026",
+      credentialId: "Pembekalan 12+ Essential Skills Program Magang Nasional",
+      description:
+        "Program pembekalan mengenai keyakinan individu terhadap kemampuannya dalam menghasilkan kinerja tertentu, mengelola tantangan kerja, dan membangun kesiapan kerja yang proaktif.",
+      skills: ["Self Efficacy", "Self-Confidence", "Work Readiness", "Growth Mindset"],
+      link: "/Sertifikat/Essential-Skills-Self-Efficacy.pdf",
+      color: "from-red-600 to-red-700", // Menyesuaikan dengan tema merah sertifikat GNIK
+      icon: "🎯", // Icon target/fokus yang melambangkan efikasi diri dan kinerja
     },
   ];
 

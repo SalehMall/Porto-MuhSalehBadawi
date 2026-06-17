@@ -4,8 +4,27 @@ import { FaBriefcase, FaCalendar, FaMapMarkerAlt, FaCheckCircle } from "react-ic
 
 const WorkExperience = () => {
   const experiences = [
+    // PENGALAMAN KE 1 (Terbaru) - BPVP KENDARI
     {
       id: 1,
+      title: "Pranata Komputer Magang",
+      company: "Balai Pelatihan Vokasi dan Produktivitas (BPVP)",
+      location: "Kendari, Sulawesi Tenggara",
+      period: "16 Desember 2025 - 16 Juni 2026",
+      type: "Internship",
+      description:
+        "Berperan dalam digitalisasi operasional instansi melalui pengembangan berbagai sistem informasi internal dan optimalisasi website resmi.",
+      responsibilities: [
+        "Merancang dan mengembangkan 4 sistem informasi internal: Sistem Arsiparis, SITANGKAS (Sistem Perjalanan Dinas), Sistem E-Cuti, dan Sistem Inventaris Gudang",
+        "Mengoptimalkan antarmuka pengguna (UI/UX) dan mengembangkan fitur-fitur tambahan pada website resmi BPVP Kendari",
+        "Melakukan pemeliharaan sistem (maintenance), penanganan masalah (bug fixing), serta pengembangan fitur berdasarkan umpan balik pengguna",
+      ],
+      // UBAH TEKNOLOGI DI BAWAH INI SESUAI YANG ANDA PAKAI DI BPVP
+      technologies: ["PHP", "Laravel", "MySQL", "JavaScript", "Bootstrap/Tailwind"], 
+    },
+    // PENGALAMAN KE 2 - BPPW SULTRA
+    {
+      id: 2,
       title: "Pranata Komputer Magang",
       company: "Balai Prasarana Permukiman Wilayah (BPPW) Sulawesi Tenggara",
       location: "Kendari, Sulawesi Tenggara",
