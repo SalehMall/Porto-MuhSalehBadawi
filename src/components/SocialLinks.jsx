@@ -33,7 +33,7 @@ const SocialLinks = () => {
     {
       id: 4,
       icon: BsFillPersonLinesFill,
-      href: "/CV MUH SALEH BADAWI.pdf",
+      href: "/CV-MUH SALEH BADAWI.pdf",
       label: "Resume",
       color: "from-green-500 to-emerald-500",
       hoverColor: "hover:shadow-green-500/50",
