@@ -132,7 +132,7 @@ const Experience = () => {
           <motion.span
             initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            className="inline-block px-4 py-2 rounded-full glass text-accent text-sm font-medium mb-4"
+            className="inline-block px-4 py-2 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] text-accent text-sm font-semibold mb-4"
           >
             What I Do Best
           </motion.span>
@@ -142,7 +142,7 @@ const Experience = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            <span className="text-white">Technical </span>
+            <span className="text-[var(--text-main)]">Technical </span>
             <span className="gradient-text">Skills</span>
           </motion.h2>
           <motion.p
@@ -172,8 +172,8 @@ const Experience = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                   activeCategory === category.id
-                    ? "bg-gradient-to-r from-accent to-purple text-dark"
-                    : "glass text-secondary hover:text-white"
+                    ? "bg-gradient-to-r from-accent to-purple text-white dark:text-dark"
+                    : "bg-[#E2E8F0] dark:bg-white/5 border border-transparent dark:border-white/10 text-secondary hover:text-[var(--text-main)]"
                 }`}
               >
                 <IconCat size={16} />
@@ -207,7 +207,7 @@ const Experience = () => {
                     className={`absolute -inset-1 bg-gradient-to-r ${skill.color} rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500`}
                   />
 
-                  <div className="relative p-6 rounded-2xl bg-dark/80 backdrop-blur-xl border border-white/5 hover:border-white/10 transition-all duration-300 flex flex-col items-center text-center">
+                  <div className="relative p-6 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-sm dark:shadow-none transition-all duration-300 flex flex-col items-center text-center">
                     {/* Icon */}
                     <div
                       className={`w-16 h-16 rounded-xl bg-gradient-to-br ${skill.color} flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}
@@ -216,7 +216,7 @@ const Experience = () => {
                     </div>
 
                     {/* Name */}
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="text-lg font-semibold text-[var(--text-main)]">
                       {skill.name}
                     </h3>
                   </div>
@@ -269,7 +269,7 @@ const Experience = () => {
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
-                className="text-center p-6 rounded-2xl glass group cursor-pointer"
+                className="text-center p-6 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-sm dark:shadow-none group cursor-pointer"
               >
                 <div className="flex items-center justify-center mb-4">
                   <div

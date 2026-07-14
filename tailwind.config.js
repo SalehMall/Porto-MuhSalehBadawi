@@ -1,17 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        dark: "#030712",
-        darker: "#010409",
+        dark: "var(--bg-main)",
+        darker: "var(--bg-card)",
         light: "#f8fafc",
-        accent: "#06b6d4",
+        accent: "var(--accent-primary)",
         "accent-light": "#22d3ee",
         "accent-dark": "#0891b2",
-        secondary: "#94a3b8",
-        purple: "#8b5cf6",
+        secondary: "var(--text-muted)",
+        purple: "var(--accent-secondary)",
         "purple-light": "#a78bfa",
         pink: "#ec4899",
         "pink-light": "#f472b6",
@@ -65,12 +66,12 @@ export default {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "mesh-gradient": "linear-gradient(135deg, #030712 0%, #0a1628 50%, #030712 100%)",
+        "mesh-gradient": "linear-gradient(135deg, var(--bg-main) 0%, var(--bg-card) 50%, var(--bg-main) 100%)",
       },
       boxShadow: {
-        "glow-sm": "0 0 15px rgba(6, 182, 212, 0.3)",
-        "glow-md": "0 0 30px rgba(6, 182, 212, 0.4)",
-        "glow-lg": "0 0 50px rgba(6, 182, 212, 0.5)",
+        "glow-sm": "0 0 15px var(--glow-color)",
+        "glow-md": "0 0 30px var(--glow-color)",
+        "glow-lg": "0 0 50px var(--glow-color)",
         "glow-purple": "0 0 30px rgba(139, 92, 246, 0.4)",
         "glow-pink": "0 0 30px rgba(236, 72, 153, 0.4)",
       },

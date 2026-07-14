@@ -59,7 +59,7 @@ const Work = () => {
       repo: "https://github.com/SalehMall",
       image: "/project/arsip.png",
       category: "Web App",
-      color: "from-blue-600 to-indigo-700", // Warna Biru-Indigo (Profesional & Teratur)
+      color: "from-blue-600 to-indigo-700",
     },
     {
       id: 6,
@@ -70,7 +70,54 @@ const Work = () => {
       repo: "https://github.com/SalehMall",
       image: "/project/aktifitas-magang.png",
       category: "Web App",
-      color: "from-emerald-500 to-teal-600", // Warna Emerald-Teal (Monitoring & Progress)
+      color: "from-emerald-500 to-teal-600",
+    },
+    // ==========================================
+    // PROYEK BARU YANG DITAMBAHKAN
+    // ==========================================
+    {
+      id: 7,
+      title: "SITANGKAS (Sistem Perjalanan Dinas)",
+      desc: "Sistem informasi manajemen perjalanan dinas untuk mempermudah pengajuan, persetujuan, dan pelaporan kegiatan dinas pegawai.",
+      tech: ["Laravel", "MySQL", "JavaScript", "Bootstrap"],
+      link: "https://github.com/SalehMall",
+      repo: "https://github.com/SalehMall",
+      image: "/project/sitangkas.png", // Ganti dengan nama file gambar yang sesuai
+      category: "Web App",
+      color: "from-cyan-500 to-blue-600",
+    },
+    {
+      id: 8,
+      title: "Sistem E-Cuti",
+      desc: "Aplikasi pengelolaan cuti pegawai secara digital, mencakup alur persetujuan atasan dan rekapitulasi sisa cuti secara real-time.",
+      tech: ["Laravel", "MySQL", "TailwindCSS", "JavaScript"],
+      link: "https://github.com/SalehMall",
+      repo: "https://github.com/SalehMall",
+      image: "/project/e-cuti.png", // Ganti dengan nama file gambar yang sesuai
+      category: "Web App",
+      color: "from-rose-500 to-red-600",
+    },
+    {
+      id: 9,
+      title: "Sistem Inventaris Gudang",
+      desc: "Sistem manajemen stok barang di gudang dengan fitur pencatatan barang masuk, barang keluar, dan laporan ketersediaan inventaris.",
+      tech: ["PHP", "MySQL", "JavaScript", "CSS"],
+      link: "https://github.com/SalehMall",
+      repo: "https://github.com/SalehMall",
+      image: "/project/inventaris.png", // Ganti dengan nama file gambar yang sesuai
+      category: "Web App",
+      color: "from-yellow-500 to-amber-600",
+    },
+    {
+      id: 10,
+      title: "Mengembangkan fitur-fitur Website BPVP Kendari",
+      desc: "Mengoptimalkan antarmuka pengguna (UI/UX) dan mengembangkan fitur-fitur tambahan pada website resmi BPVP Kendari",
+      tech: ["Laravel", "TailwindCSS", "JavaScript", "MySQL"],
+      link: "https://github.com/SalehMall",
+      repo: "https://github.com/SalehMall",
+      image: "/project/bpvp-kendari.png", // Ganti dengan nama file gambar yang sesuai
+      category: "Website",
+      color: "from-indigo-500 to-violet-600",
     },
   ];
 
@@ -94,7 +141,7 @@ const Work = () => {
           <motion.span
             initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            className="inline-block px-4 py-2 rounded-full glass text-accent text-sm font-medium mb-4"
+            className="inline-block px-4 py-2 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] text-accent text-sm font-semibold mb-4"
           >
             Featured Work
           </motion.span>
@@ -104,7 +151,7 @@ const Work = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            <span className="text-white">Selected </span>
+            <span className="text-[var(--text-main)]">Selected </span>
             <span className="gradient-text">Projects</span>
           </motion.h2>
           <motion.p
@@ -127,16 +174,16 @@ const Work = () => {
               viewport={{ once: true }}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
-              className="group relative"
+              className="group relative flex flex-col h-full"
             >
               {/* Glow Effect */}
               <div
                 className={`absolute -inset-1 bg-gradient-to-r ${project.color} rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500`}
               />
 
-              <div className="relative h-full rounded-2xl overflow-hidden bg-dark/80 backdrop-blur-xl border border-white/5 hover:border-white/10 transition-all duration-500">
+              <div className="relative flex flex-col h-full rounded-2xl overflow-hidden bg-[var(--bg-card)] border border-[var(--border-color)] shadow-sm dark:shadow-none transition-all duration-500">
                 {/* Image Container */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden shrink-0">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -190,12 +237,12 @@ const Work = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-accent group-hover:to-purple transition-all duration-300">
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold text-[var(--text-main)] mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-accent group-hover:to-purple transition-all duration-300">
                     {project.title}
                   </h3>
 
-                  <p className="text-secondary text-sm mb-4 line-clamp-2">
+                  <p className="text-secondary text-sm mb-4 line-clamp-3 flex-grow">
                     {project.desc}
                   </p>
 
@@ -204,7 +251,7 @@ const Work = () => {
                     {project.tech.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-2 py-1 rounded text-xs glass text-accent"
+                        className="px-2 py-1 rounded text-xs bg-[var(--bg-main)] border border-[var(--border-color)] text-accent"
                       >
                         {tech}
                       </span>
@@ -212,12 +259,12 @@ const Work = () => {
                   </div>
 
                   {/* Links */}
-                  <div className="flex gap-4 pt-4 border-t border-white/5">
+                  <div className="flex gap-4 pt-4 border-t border-[var(--border-color)] mt-auto">
                     <a
                       href={project.repo}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center gap-2 text-sm text-secondary hover:text-white transition-colors"
+                      className="flex items-center gap-2 text-sm text-secondary hover:text-[var(--text-main)] transition-colors"
                     >
                       <FaGithub />
                       <span>Code</span>

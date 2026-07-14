@@ -81,7 +81,7 @@ const Home = () => {
             y: mousePosition.y * 2,
           }}
           transition={{ type: "spring", damping: 30 }}
-          className="absolute top-20 left-10 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[120px] opacity-60"
+          className="absolute top-20 left-10 w-[500px] h-[500px] bg-accent/10 dark:bg-accent/20 rounded-full blur-[120px] opacity-60"
         />
         <motion.div
           animate={{
@@ -89,7 +89,7 @@ const Home = () => {
             y: mousePosition.y * -2,
           }}
           transition={{ type: "spring", damping: 30 }}
-          className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-purple/20 rounded-full blur-[120px] opacity-50"
+          className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-purple/10 dark:bg-purple/20 rounded-full blur-[120px] opacity-50"
         />
         <motion.div
           animate={{
@@ -97,7 +97,7 @@ const Home = () => {
             y: mousePosition.y * -1.5,
           }}
           transition={{ type: "spring", damping: 30 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-pink/10 rounded-full blur-[100px] opacity-40"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-pink/5 dark:bg-pink/10 rounded-full blur-[100px] opacity-40"
         />
 
         {/* Grid Pattern */}
@@ -147,7 +147,7 @@ const Home = () => {
             <motion.h1 variants={revealVariants} className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4">
               <span className="gradient-text">Muh Saleh</span>
               <br />
-              <span className="text-white">Badawi</span>
+              <span className="text-[var(--text-main)]">Badawi</span>
             </motion.h1>
           </motion.div>
 
@@ -193,7 +193,7 @@ const Home = () => {
               to="work"
               smooth
               duration={500}
-              className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 text-dark font-semibold rounded-full overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105"
+              className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 text-white dark:text-dark font-semibold rounded-full overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-accent via-purple to-pink animate-gradient bg-[length:200%_200%]" />
               <span className="relative flex items-center gap-2">
@@ -210,7 +210,7 @@ const Home = () => {
             <a
               href="/CV-Muh-Saleh-Badawi.pdf"
               download
-              className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full glass text-white font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105"
+              className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[var(--bg-card)] border border-[var(--border-color)] text-[var(--text-main)] font-semibold hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-300 hover:scale-105"
             >
               <FaDownload size={14} />
               Download CV
@@ -265,14 +265,14 @@ const Home = () => {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] rounded-full overflow-hidden"
+              className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] rounded-full overflow-hidden profile-img-container"
             >
               {/* Animated Border */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-accent via-purple to-pink p-1 animate-spin-slow">
-                <div className="w-full h-full rounded-full bg-dark" />
+                <div className="w-full h-full rounded-full bg-[var(--bg-main)]" />
               </div>
 
-              {/* Profile Image */}
+              {/* Profile Image with blend overlay */}
               <div className="absolute inset-2 rounded-full overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
                 <img
                   src="/dawi.jpg"

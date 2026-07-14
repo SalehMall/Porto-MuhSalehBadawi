@@ -44,7 +44,7 @@ const Education = () => {
           <motion.span
             initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            className="inline-block px-4 py-2 rounded-full glass text-purple text-sm font-medium mb-4"
+            className="inline-block px-4 py-2 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] text-purple text-sm font-semibold mb-4"
           >
             Academic Background
           </motion.span>
@@ -54,7 +54,7 @@ const Education = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            <span className="text-white">My </span>
+            <span className="text-[var(--text-main)]">My </span>
             <span className="gradient-text">Education</span>
           </motion.h2>
           <motion.p
@@ -78,7 +78,7 @@ const Education = () => {
             {/* Animated Border */}
             <div className="absolute -inset-1 bg-gradient-to-r from-accent via-purple to-pink rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-500" />
 
-            <div className="relative p-8 md:p-10 rounded-3xl bg-dark/80 backdrop-blur-xl border border-white/5">
+            <div className="relative p-8 md:p-10 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-sm dark:shadow-none">
               {/* Header */}
               <div className="flex flex-col md:flex-row md:items-start gap-6 mb-8">
                 {/* Icon */}
@@ -92,7 +92,7 @@ const Education = () => {
 
                 {/* Title & Info */}
                 <div className="flex-1">
-                  <h3 className="text-3xl font-bold text-white mb-2">
+                  <h3 className="text-3xl font-bold text-[var(--text-main)] mb-2">
                     {educationData.degree}
                   </h3>
                   <p className="text-xl text-accent font-medium mb-4">
@@ -109,7 +109,7 @@ const Education = () => {
                   viewport={{ once: true }}
                   className="flex-shrink-0"
                 >
-                  <div className="px-6 py-4 rounded-2xl glass text-center">
+                  <div className="px-6 py-4 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-color)] text-center">
                     <div className="text-sm text-secondary mb-1">IPK</div>
                     <div className="text-3xl font-bold gradient-text">
                       {educationData.gpa.split(" ")[0]}
@@ -120,7 +120,7 @@ const Education = () => {
               </div>
 
               {/* Meta Info */}
-              <div className="flex flex-wrap gap-6 mb-8 pb-8 border-b border-white/5">
+              <div className="flex flex-wrap gap-6 mb-8 pb-8 border-b border-[var(--border-color)]">
                 <div className="flex items-center gap-2 text-secondary">
                   <FaCalendar className="text-accent" />
                   <span>{educationData.period}</span>
@@ -135,7 +135,7 @@ const Education = () => {
               <div className="mb-8">
                 <div className="flex items-center gap-2 mb-4">
                   <FaMedal className="text-amber-500" />
-                  <h4 className="text-lg font-semibold text-white">Pencapaian</h4>
+                  <h4 className="text-lg font-semibold text-[var(--text-main)]">Pencapaian</h4>
                 </div>
                 <ul className="space-y-3">
                   {educationData.achievements.map((achievement, i) => (
@@ -156,7 +156,7 @@ const Education = () => {
 
               {/* Relevant Courses */}
               <div>
-                <h4 className="text-lg font-semibold text-white mb-4">
+                <h4 className="text-lg font-semibold text-[var(--text-main)] mb-4">
                   Mata Kuliah Relevan
                 </h4>
                 <div className="flex flex-wrap gap-2">
@@ -168,7 +168,7 @@ const Education = () => {
                       transition={{ delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.05 }}
-                      className="px-4 py-2 rounded-full glass text-sm text-accent border border-accent/20 hover:border-accent/50 transition-colors cursor-default"
+                      className="px-4 py-2 rounded-full bg-[var(--bg-main)] border border-[var(--border-color)] text-sm text-accent hover:border-accent/50 transition-colors cursor-default"
                     >
                       {course}
                     </motion.span>

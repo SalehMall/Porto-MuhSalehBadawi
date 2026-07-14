@@ -53,13 +53,13 @@ const Achievements = () => {
   const getCategoryStyle = (category) => {
     switch (category) {
       case "Competition":
-        return "bg-amber-500/10 text-amber-400 border-amber-500/30";
+        return "bg-amber-500/10 text-amber-500 dark:text-amber-400 border-amber-500/30";
       case "Program":
         return "bg-purple/10 text-purple border-purple/30";
       case "Leadership":
-        return "bg-blue-500/10 text-blue-400 border-blue-500/30";
+        return "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/30";
       case "Experience":
-        return "bg-green-500/10 text-green-400 border-green-500/30";
+        return "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/30";
       default:
         return "bg-accent/10 text-accent border-accent/30";
     }
@@ -82,11 +82,11 @@ const Achievements = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-2 rounded-full glass text-amber-400 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-2 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] text-amber-500 text-sm font-semibold mb-4">
             Recognition
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-white">My </span>
+            <span className="text-[var(--text-main)]">My </span>
             <span className="gradient-text">Achievements</span>
           </h2>
           <p className="text-secondary max-w-2xl mx-auto">
@@ -113,7 +113,7 @@ const Achievements = () => {
                   className={`absolute -inset-1 bg-gradient-to-r ${achievement.color} rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500`}
                 />
 
-                <div className="relative h-full p-6 rounded-2xl bg-dark/80 backdrop-blur-xl border border-white/5 hover:border-white/10 transition-all duration-300">
+                <div className="relative h-full p-6 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-sm dark:shadow-none transition-all duration-300">
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
                     <motion.div
@@ -132,7 +132,7 @@ const Achievements = () => {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-accent transition-all duration-300">
+                  <h3 className="text-lg font-bold text-[var(--text-main)] mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[var(--text-main)] group-hover:to-accent transition-all duration-300">
                     {achievement.title}
                   </h3>
 
@@ -166,9 +166,9 @@ const Achievements = () => {
         >
           {[
             { value: "2", label: "National Programs", color: "text-purple" },
-            { value: "1", label: "Leadership Role", color: "text-blue-400" },
-            { value: "1", label: "Internship", color: "text-green-400" },
-            { value: "4+", label: "Certifications", color: "text-amber-400" },
+            { value: "1", label: "Leadership Role", color: "text-blue-600 dark:text-blue-400" },
+            { value: "1", label: "Internship", color: "text-green-600 dark:text-green-400" },
+            { value: "4+", label: "Certifications", color: "text-amber-500 dark:text-amber-400" },
           ].map((stat, i) => (
             <motion.div
               key={i}
@@ -176,7 +176,7 @@ const Achievements = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="text-center p-6 rounded-xl glass"
+              className="text-center p-6 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-sm dark:shadow-none"
             >
               <div className={`text-4xl font-bold ${stat.color} mb-2`}>
                 {stat.value}

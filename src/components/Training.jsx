@@ -56,7 +56,6 @@ const Training = () => {
       color: "from-green-500 to-emerald-500",
       icon: "📱",
     },
-    
     {
       id: 5,
       title: "SkillFest 2025: Transformasi Digital",
@@ -67,47 +66,22 @@ const Training = () => {
         "Berpartisipasi dalam talkshow SkillFest 2025 mengenai peluang & tantangan transformasi digital serta strategi menyusun peta jalan karier bagi mahasiswa.",
       skills: ["Digital Transformation", "Career Roadmap", "Digital Skills", "Future Readiness"],
       link: "/Sertifikat/Skill-Our-Future-2025.pdf",
-      color: "from-blue-600 to-indigo-700", // Mengikuti aksen warna biru dan ungu pada sertifikat
+      color: "from-blue-600 to-indigo-700",
       icon: "🌐",
     },   
+    // INI ADALAH DATA SERTIFIKAT BARU YANG DITAMBAHKAN
     {
       id: 6,
-      title: "Essential Skills: Design Thinking",
-      provider: "GNIK, Kemnaker RI & Maganghub",
-      date: "Januari 2026",
-      credentialId: "Pembekalan Essential Skills Program Magang Nasional",
+      title: "Program Pemagangan: Pranata Komputer",
+      provider: "KEMNAKER (BPVP Kendari)",
+      date: "Desember 2025 - Juni 2026",
+      credentialId: "MN.074.017872.03.2025",
       description:
-        "Program pembekalan magang nasional yang mempelajari pendekatan Design Thinking untuk pemecahan masalah secara kreatif dan inovatif.",
-      skills: ["Design Thinking", "Problem Solving", "Creative Thinking", "Innovation"],
-      link: "/Sertifikat/Essential-Skills-Design-Thinking.pdf",
-      color: "from-red-600 to-red-700", // Merah tegas (Bold Red)
-      icon: "💡",
-    },
-    {
-      id: 7,
-      title: "Essential Skills: Integrity at Work",
-      provider: "GNIK, Kemnaker RI & Maganghub",
-      date: "Februari 2026",
-      credentialId: "Pembekalan Essential Skills Program Magang Nasional",
-      description:
-        "Program pembekalan mengenai pentingnya integritas, kejujuran, dan etika profesional dalam lingkungan kerja.",
-      skills: ["Integrity", "Professional Ethics", "Workplace Culture", "Soft Skills"],
-      link: "/Sertifikat/Essential-Skills-Integrity-at-Work.pdf",
-      color: "from-red-500 to-red-600", // Merah sedikit lebih terang (Solid Red)
-      icon: "🤝",
-    },
-    {
-      id: 8, // Sesuaikan urutan ID jika perlu
-      title: "Essential Skills: Self Efficacy",
-      provider: "GNIK, Kemnaker RI & Maganghub",
-      date: "Februari 2026",
-      credentialId: "Pembekalan 12+ Essential Skills Program Magang Nasional",
-      description:
-        "Program pembekalan mengenai keyakinan individu terhadap kemampuannya dalam menghasilkan kinerja tertentu, mengelola tantangan kerja, dan membangun kesiapan kerja yang proaktif.",
-      skills: ["Self Efficacy", "Self-Confidence", "Work Readiness", "Growth Mindset"],
-      link: "/Sertifikat/Essential-Skills-Self-Efficacy.pdf",
-      color: "from-red-600 to-red-700", // Menyesuaikan dengan tema merah sertifikat GNIK
-      icon: "🎯", // Icon target/fokus yang melambangkan efikasi diri dan kinerja
+        "Menyelesaikan Program Pemagangan Lulusan Perguruan Tinggi yang dilaksanakan oleh BPVP Kendari pada posisi Pranata Komputer dengan predikat SANGAT BAIK.",
+      skills: ["Pranata Komputer", "IT Support", "Sistem Informasi", "IT Administration"],
+      link: "/Sertifikat/Sertifikat_Magang_KEMNAKER.pdf", // Pastikan nama file PDF Anda sesuai dengan ini
+      color: "from-cyan-500 to-blue-600", // Menggunakan warna cyan/biru menyesuaikan warna tema KEMNAKER
+      icon: "💻",
     },
   ];
 
@@ -131,7 +105,7 @@ const Training = () => {
           <motion.span
             initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            className="inline-block px-4 py-2 rounded-full glass text-purple text-sm font-medium mb-4"
+            className="inline-block px-4 py-2 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] text-purple text-sm font-semibold mb-4"
           >
             Continuous Learning
           </motion.span>
@@ -141,7 +115,7 @@ const Training = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            <span className="text-white">Training & </span>
+            <span className="text-[var(--text-main)]">Training & </span>
             <span className="gradient-text">Certifications</span>
           </motion.h2>
           <motion.p
@@ -169,7 +143,7 @@ const Training = () => {
                 className={`absolute -inset-1 bg-gradient-to-r ${training.color} rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500`}
               />
 
-              <div className="relative h-full p-8 rounded-2xl bg-dark/80 backdrop-blur-xl border border-white/5 hover:border-white/10 transition-all duration-300 flex flex-col">
+              <div className="relative h-full p-8 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-sm dark:shadow-none transition-all duration-300 flex flex-col">
                 {/* Header */}
                 <div className="flex items-start gap-4 mb-6">
                   <motion.div
@@ -179,7 +153,7 @@ const Training = () => {
                     {training.icon}
                   </motion.div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-accent group-hover:to-purple transition-all duration-300">
+                    <h3 className="text-xl font-bold text-[var(--text-main)] mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-accent group-hover:to-purple transition-all duration-300">
                       {training.title}
                     </h3>
                     <p className="text-accent font-medium text-sm">
@@ -200,9 +174,9 @@ const Training = () => {
                 </p>
 
                 {/* Credential ID */}
-                <div className="mb-6 p-3 rounded-lg glass">
+                <div className="mb-6 p-3 rounded-lg bg-[var(--bg-main)] border border-[var(--border-color)]">
                   <p className="text-xs text-secondary mb-1">Credential ID:</p>
-                  <p className="text-sm text-white font-mono truncate">
+                  <p className="text-sm text-[var(--text-main)] font-mono truncate">
                     {training.credentialId}
                   </p>
                 </div>
@@ -217,7 +191,7 @@ const Training = () => {
                         whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                         transition={{ delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
                         viewport={{ once: true }}
-                        className={`px-3 py-1 rounded-full text-xs bg-gradient-to-r ${training.color} bg-opacity-10 text-white border border-white/10`}
+                        className={`px-3 py-1 rounded-full text-xs bg-gradient-to-r ${training.color} bg-opacity-10 text-[var(--text-main)] border border-[var(--border-color)]`}
                       >
                         {skill}
                       </motion.span>
@@ -230,7 +204,7 @@ const Training = () => {
                   href={training.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-accent text-sm hover:text-white transition-colors group/link"
+                  className="inline-flex items-center gap-2 text-accent text-sm hover:text-[var(--text-main)] transition-colors group/link"
                 >
                   <FaCertificate />
                   <span>View Certificate</span>
@@ -250,11 +224,11 @@ const Training = () => {
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
-          className="mt-16 p-8 rounded-2xl glass max-w-3xl mx-auto text-center"
+          className="mt-16 p-8 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-sm dark:shadow-none max-w-3xl mx-auto text-center"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <FaAward className="text-amber-500 text-2xl" />
-            <h3 className="text-xl font-bold text-white">Program Highlights</h3>
+            <h3 className="text-xl font-bold text-[var(--text-main)]">Program Highlights</h3>
           </div>
           <div className="flex flex-wrap justify-center gap-8 text-center">
             <div>
@@ -262,7 +236,8 @@ const Training = () => {
               <div className="text-secondary text-sm">Training Hours</div>
             </div>
             <div>
-              <div className="text-3xl font-bold gradient-text">4</div>
+              {/* Jumlah sertifikat diubah menjadi 6 */}
+              <div className="text-3xl font-bold gradient-text">6</div>
               <div className="text-secondary text-sm">Certifications</div>
             </div>
             <div>

@@ -38,7 +38,7 @@ const About = () => {
           <motion.span
             initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            className="inline-block px-4 py-2 rounded-full glass text-accent text-sm font-medium mb-4"
+            className="inline-block px-4 py-2 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] text-accent text-sm font-semibold mb-4"
           >
             Get to know me
           </motion.span>
@@ -48,7 +48,7 @@ const About = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            <span className="text-white">About </span>
+            <span className="text-[var(--text-main)]">About </span>
             <span className="gradient-text">Me</span>
           </motion.h2>
           <motion.div
@@ -71,8 +71,8 @@ const About = () => {
             <div className="space-y-6">
               <p className="text-xl text-secondary leading-relaxed">
                 Saya adalah lulusan jurusan{" "}
-                <span className="text-white font-medium">Teknik Informatika</span> dari{" "}
-                <span className="text-accent">Universitas Halu Oleo</span> dengan
+                <span className="text-[var(--text-main)] font-semibold">Teknik Informatika</span> dari{" "}
+                <span className="text-accent font-semibold">Universitas Halu Oleo</span> dengan
                 pemahaman mendalam tentang pemrograman dan pengembangan web.
               </p>
 
@@ -91,7 +91,7 @@ const About = () => {
 
             {/* Highlights */}
             <div className="mt-10">
-              <h3 className="text-lg font-semibold text-white mb-4">Highlights:</h3>
+              <h3 className="text-lg font-semibold text-[var(--text-main)] mb-4">Highlights:</h3>
               <ul className="space-y-3">
                 {highlights.map((item, i) => (
                   <motion.li
@@ -128,7 +128,7 @@ const About = () => {
                   transition={{ delay: i * 0.1 + 0.2, ease: [0.16, 1, 0.3, 1] }}
                   viewport={{ once: true }}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className="group relative p-8 rounded-2xl glass overflow-hidden"
+                  className="group relative p-8 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-sm dark:shadow-none overflow-hidden transition-all duration-300"
                 >
                   {/* Gradient Background on Hover */}
                   <div

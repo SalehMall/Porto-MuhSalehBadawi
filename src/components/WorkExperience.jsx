@@ -84,11 +84,11 @@ const WorkExperience = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-2 rounded-full glass text-blue-400 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-2 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] text-blue-400 text-sm font-semibold mb-4">
             Career Journey
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-white">Work </span>
+            <span className="text-[var(--text-main)]">Work </span>
             <span className="gradient-text">Experience</span>
           </h2>
           <p className="text-secondary max-w-2xl mx-auto">
@@ -99,7 +99,8 @@ const WorkExperience = () => {
         {/* Timeline */}
         <div className="relative max-w-4xl mx-auto">
           {/* Timeline Line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent via-purple to-pink transform -translate-x-1/2 hidden md:block" />
+          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent via-purple to-pink transform -translate-x-1/2 hidden md:block dark:block" />
+          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-[#E2E8F0] transform -translate-x-1/2 hidden md:block dark:hidden" />
 
           {experiences.map((exp, index) => {
             const styles = getTypeStyles(exp.type);
@@ -114,18 +115,18 @@ const WorkExperience = () => {
                   index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"
                 }`}
               >
-                {/* Timeline Dot */}
-                <div className="hidden md:block absolute top-8 w-4 h-4 rounded-full bg-gradient-to-r from-accent to-purple border-4 border-dark transform -translate-y-1/2 z-10 shadow-glow-sm"
-                  style={{
-                    left: index % 2 === 0 ? "calc(100% + 22px)" : "-30px",
-                  }}
-                />
-
                 {/* Card */}
                 <div className="group relative">
                   <div className="absolute -inset-1 bg-gradient-to-r from-accent via-purple to-pink rounded-2xl blur opacity-0 group-hover:opacity-25 transition duration-500" />
 
-                  <div className="relative p-6 md:p-8 rounded-2xl bg-dark/80 backdrop-blur-xl border border-white/5 hover:border-white/10 transition-all duration-300">
+                  {/* Timeline Dot linked with card hover */}
+                  <div className="hidden md:block absolute top-8 w-4 h-4 rounded-full bg-[#E2E8F0] dark:bg-gradient-to-r dark:from-accent dark:to-purple border-4 border-[var(--bg-main)] transform -translate-y-1/2 z-10 transition-all duration-300 group-hover:bg-[#0284C7] dark:group-hover:bg-accent-light"
+                    style={{
+                      left: index % 2 === 0 ? "calc(100% + 22px)" : "-30px",
+                    }}
+                  />
+
+                  <div className="relative p-6 md:p-8 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-sm dark:shadow-none transition-all duration-300">
                     {/* Header */}
                     <div className="flex items-start gap-4 mb-6">
                       <div
@@ -136,7 +137,7 @@ const WorkExperience = () => {
 
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
-                          <h3 className="text-xl font-bold text-white">
+                          <h3 className="text-xl font-bold text-[var(--text-main)]">
                             {exp.title}
                           </h3>
                           <span
@@ -145,7 +146,7 @@ const WorkExperience = () => {
                             {exp.type}
                           </span>
                         </div>
-                        <p className="text-accent font-medium">{exp.company}</p>
+                        <p className="text-accent font-semibold">{exp.company}</p>
                       </div>
                     </div>
 
@@ -166,7 +167,7 @@ const WorkExperience = () => {
 
                     {/* Responsibilities */}
                     <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+                      <h4 className="text-sm font-bold text-[var(--text-main)] mb-3 flex items-center gap-2">
                         <FaCheckCircle className="text-accent" />
                         Tanggung Jawab
                       </h4>
@@ -192,7 +193,7 @@ const WorkExperience = () => {
                       {exp.technologies.map((tech, i) => (
                         <span
                           key={i}
-                          className="px-3 py-1 rounded-full text-xs glass text-accent border border-accent/20"
+                          className="px-3 py-1 rounded-full text-xs bg-[var(--bg-main)] border border-[var(--border-color)] text-accent font-semibold"
                         >
                           {tech}
                         </span>

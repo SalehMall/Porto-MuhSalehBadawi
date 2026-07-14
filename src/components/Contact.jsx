@@ -89,7 +89,7 @@ const Contact = () => {
           <motion.span
             initial={{ opacity: 0, y: -12, filter: "blur(6px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            className="inline-block px-4 py-2 rounded-full glass text-accent text-sm font-medium mb-4"
+            className="inline-block px-4 py-2 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] text-accent text-sm font-semibold mb-4"
           >
             Let's Connect
           </motion.span>
@@ -99,7 +99,7 @@ const Contact = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            <span className="text-white">Get In </span>
+            <span className="text-[var(--text-main)]">Get In </span>
             <span className="gradient-text">Touch</span>
           </motion.h2>
           <motion.p
@@ -119,7 +119,7 @@ const Contact = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-white mb-8">
+            <h3 className="text-2xl font-bold text-[var(--text-main)] mb-8">
               Contact Information
             </h3>
 
@@ -144,7 +144,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-secondary text-sm">{item.label}</p>
-                      <p className="text-white font-medium group-hover:text-accent transition-colors">
+                      <p className="text-[var(--text-main)] font-medium group-hover:text-accent transition-colors">
                         {item.value}
                       </p>
                     </div>
@@ -155,7 +155,7 @@ const Contact = () => {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">
+              <h4 className="text-lg font-semibold text-[var(--text-main)] mb-4">
                 Follow Me
               </h4>
               <div className="flex gap-4">
@@ -172,7 +172,7 @@ const Contact = () => {
                       transition={{ delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
                       whileHover={{ scale: 1.1, y: -3 }}
                       whileTap={{ scale: 0.95 }}
-                      className={`w-12 h-12 rounded-xl glass flex items-center justify-center text-secondary ${social.color} transition-all duration-300`}
+                      className={`w-12 h-12 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] flex items-center justify-center text-secondary ${social.color} transition-all duration-300 shadow-sm`}
                     >
                       <Icon size={20} />
                     </motion.a>
@@ -187,7 +187,7 @@ const Contact = () => {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
               viewport={{ once: true }}
-              className="mt-12 p-6 rounded-2xl glass"
+              className="mt-12 p-6 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-sm"
             >
               <p className="text-secondary text-sm leading-relaxed">
                 Saya selalu terbuka untuk peluang baru dan kolaborasi menarik.
@@ -210,9 +210,9 @@ const Contact = () => {
 
               <form
                 onSubmit={handleSubmit}
-                className="relative p-8 rounded-2xl bg-dark/80 backdrop-blur-xl border border-white/5"
+                className="relative p-8 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-sm dark:shadow-none"
               >
-                <h3 className="text-2xl font-bold text-white mb-8">
+                <h3 className="text-2xl font-bold text-[var(--text-main)] mb-8">
                   Send Message
                 </h3>
 
@@ -228,7 +228,7 @@ const Contact = () => {
                       setFormState({ ...formState, name: e.target.value })
                     }
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-secondary/50 focus:outline-none focus:border-accent transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-[var(--bg-card)] dark:bg-white/5 border border-[var(--border-color)] dark:border-white/10 text-[var(--text-main)] placeholder-secondary/50 focus:outline-none focus:border-[var(--accent-primary)] focus:ring-1 focus:ring-[var(--accent-primary)] transition-all"
                     placeholder="Your name"
                   />
                 </div>
@@ -245,7 +245,7 @@ const Contact = () => {
                       setFormState({ ...formState, email: e.target.value })
                     }
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-secondary/50 focus:outline-none focus:border-accent transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-[var(--bg-card)] dark:bg-white/5 border border-[var(--border-color)] dark:border-white/10 text-[var(--text-main)] placeholder-secondary/50 focus:outline-none focus:border-[var(--accent-primary)] focus:ring-1 focus:ring-[var(--accent-primary)] transition-all"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -262,7 +262,7 @@ const Contact = () => {
                     }
                     required
                     rows={5}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-secondary/50 focus:outline-none focus:border-accent transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[var(--bg-card)] dark:bg-white/5 border border-[var(--border-color)] dark:border-white/10 text-[var(--text-main)] placeholder-secondary/50 focus:outline-none focus:border-[var(--accent-primary)] focus:ring-1 focus:ring-[var(--accent-primary)] transition-all resize-none"
                     placeholder="Your message..."
                   />
                 </div>

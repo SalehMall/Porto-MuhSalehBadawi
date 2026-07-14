@@ -42,10 +42,10 @@ function App() {
   }, [isLoaded, minDone]);
 
   return (
-    <div className="bg-dark min-h-screen">
+    <div className="bg-[var(--bg-main)] min-h-screen">
       {loading && (
         <div className="fixed inset-0 z-50 flex items-center justify-center loader-minimal">
-          <div className="w-[86%] max-w-[640px] rounded-xl bg-dark/90 border border-white/10 shadow-glow-md p-6">
+          <div className="w-[86%] max-w-[640px] rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-glow-md p-6">
             <div className="mb-3 text-secondary text-xs">php</div>
             <div className="rounded-lg bg-black/40 p-4">
               <TypeAnimation
@@ -62,7 +62,7 @@ function App() {
                 ]}
                 speed={65}
                 wrapper="span"
-                className="block font-mono text-white whitespace-pre typing-cursor"
+                className="block font-mono text-[var(--text-main)] whitespace-pre typing-cursor"
               />
             </div>
           </div>

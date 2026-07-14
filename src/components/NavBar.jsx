@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -7,6 +7,7 @@ const NavBar = () => {
   const [nav, setNav] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +16,19 @@ const NavBar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (theme === "light") {
+      document.documentElement.classList.add("light");
+    } else {
+      document.documentElement.classList.remove("light");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   const links = [
     { id: 1, link: "home", label: "Home" },
@@ -67,7 +81,7 @@ const NavBar = () => {
       animate="visible"
       className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "py-3 bg-dark/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20"
+          ? "py-3 bg-[var(--bg-card)]/80 backdrop-blur-xl border-b border-[var(--border-color)] shadow-lg shadow-black/5"
           : "py-5 bg-transparent"
       }`}
     >
@@ -81,7 +95,7 @@ const NavBar = () => {
           <Link to="home" smooth duration={500}>
             <h1 className="text-2xl font-bold tracking-tight">
               <span className="gradient-text">MSB</span>
-              <span className="text-white">.</span>
+              <span className="text-[var(--text-main)]">.</span>
             </h1>
           </Link>
         </motion.div>
@@ -99,14 +113,14 @@ const NavBar = () => {
                 onSetActive={() => setActiveSection(link)}
                 className={`relative px-4 py-2 text-sm font-medium cursor-pointer transition-all duration-300 rounded-full ${
                   activeSection === link
-                    ? "text-white"
-                    : "text-secondary hover:text-white"
+                    ? "text-[var(--text-main)]"
+                    : "text-secondary hover:text-[var(--text-main)]"
                 }`}
               >
                 {activeSection === link && (
                   <motion.div
                     layoutId="activeSection"
-                    className="absolute inset-0 bg-white/10 rounded-full"
+                    className="absolute inset-0 bg-[var(--accent-primary)]/10 rounded-full"
                     transition={{ type: "spring", duration: 0.6 }}
                   />
                 )}
@@ -116,8 +130,19 @@ const NavBar = () => {
           ))}
         </ul>
 
-        {/* CTA Button - Desktop */}
-        <div className="hidden lg:block">
+        {/* Right Nav Action: Theme Toggle & CTA */}
+        <div className="hidden lg:flex items-center gap-4">
+          {/* Theme Toggle Button */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={toggleTheme}
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--bg-card)] border border-[var(--border-color)] text-[var(--text-main)] hover:bg-[var(--accent-primary)]/10 transition-colors shadow-sm"
+            aria-label="Toggle Theme"
+          >
+            {theme === "light" ? <FaMoon size={16} /> : <FaSun size={16} />}
+          </motion.button>
+
           <Link to="contact" smooth duration={500}>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -125,43 +150,56 @@ const NavBar = () => {
               className="relative px-6 py-2.5 rounded-full overflow-hidden group"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-accent via-purple to-pink opacity-100 group-hover:opacity-90 transition-opacity" />
-              <span className="relative text-dark font-semibold text-sm">
+              <span className="relative text-white dark:text-dark font-semibold text-sm">
                 Hire Me
               </span>
             </motion.button>
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
-        <motion.button
-          whileTap={{ scale: 0.9 }}
-          onClick={() => setNav(!nav)}
-          className="lg:hidden relative z-50 w-10 h-10 flex items-center justify-center rounded-full glass"
-        >
-          <AnimatePresence mode="wait">
-            {nav ? (
-              <motion.div
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <FaTimes size={18} className="text-white" />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="menu"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <FaBars size={18} className="text-white" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.button>
+        {/* Mobile Menu Actions */}
+        <div className="lg:hidden flex items-center gap-3 relative z-50">
+          {/* Mobile Theme Toggle Button */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={toggleTheme}
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--bg-card)] border border-[var(--border-color)] text-[var(--text-main)] transition-colors shadow-sm"
+            aria-label="Toggle Theme"
+          >
+            {theme === "light" ? <FaMoon size={16} /> : <FaSun size={16} />}
+          </motion.button>
+
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setNav(!nav)}
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--bg-card)] border border-[var(--border-color)] text-[var(--text-main)]"
+          >
+            <AnimatePresence mode="wait">
+              {nav ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <FaTimes size={18} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <FaBars size={18} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.button>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -172,7 +210,7 @@ const NavBar = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="lg:hidden fixed inset-0 top-0 bg-dark/95 backdrop-blur-xl z-40"
+            className="lg:hidden fixed inset-0 top-0 bg-[var(--bg-main)]/95 backdrop-blur-xl z-40"
           >
             <div className="flex flex-col items-center justify-center h-full">
               {/* Mobile Links */}
@@ -184,7 +222,7 @@ const NavBar = () => {
                       to={link}
                       smooth
                       duration={500}
-                      className="relative px-8 py-4 text-2xl font-medium text-secondary hover:text-white transition-colors cursor-pointer group"
+                      className="relative px-8 py-4 text-2xl font-medium text-secondary hover:text-[var(--text-main)] transition-colors cursor-pointer group"
                     >
                       <span className="relative z-10">{label}</span>
                       <motion.span
@@ -198,7 +236,7 @@ const NavBar = () => {
               {/* Mobile CTA */}
               <motion.div variants={mobileItemVariants} className="mt-8">
                 <Link to="contact" smooth duration={500} onClick={() => setNav(false)}>
-                  <button className="px-8 py-3 rounded-full bg-gradient-to-r from-accent via-purple to-pink text-dark font-semibold">
+                  <button className="px-8 py-3 rounded-full bg-gradient-to-r from-accent via-purple to-pink text-white dark:text-dark font-semibold">
                     Hire Me
                   </button>
                 </Link>
